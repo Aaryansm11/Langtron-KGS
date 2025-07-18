@@ -6,29 +6,28 @@ python-multipart==0.0.6
 
 # Document Processing
 pypdf==3.17.1
-python-docx2txt==0.8
+docx2txt==0.8
 mammoth==1.6.0
-textract==1.6.5
+#textract  # Often causes conflicts, install separately if needed
 python-magic==0.4.27
 beautifulsoup4==4.12.2
 
-# NLP and ML
-spacy>=3.7.0
-https://github.com/explosion/spacy-models/releases/download/en_core_web_trf-3.7.2/en_core_web_trf-3.7.2-py3-none-any.whl
-transformers>=4.35.0
-torch>=2.1.0
+# NLP and ML (relaxed versions to avoid conflicts)
+spacy>=3.7.0,<3.8.0
+transformers>=4.35.0,<4.36.0
+torch>=2.1.0,<2.2.0
 sentence-transformers==2.2.2
 scikit-learn==1.3.2
-numpy==1.24.3
-pandas==2.0.3
+numpy>=1.24.3,<1.25.0
+pandas>=2.0.3,<2.1.0
 
-# Graph Database
-py2neo==2021.2.4
+# Graph Database (choose one - neo4j is more modern)
 neo4j==5.13.0
+# py2neo==2021.2.4  # Commented out - conflicts with neo4j driver
 
 # Graph Analysis
 networkx==3.2.1
-community==1.0.0b1
+# community==1.0.0b1  # Beta version, might cause issues
 
 # Web UI
 streamlit==1.28.1
@@ -47,7 +46,7 @@ typer==0.9.0
 # Security
 python-jose[cryptography]==3.3.0
 passlib[bcrypt]==1.7.4
-cryptography==41.0.7
+cryptography>=41.0.7,<42.0.0
 
 # Monitoring and Logging
 prometheus-client==0.19.0
@@ -85,12 +84,3 @@ sphinx-rtd-theme==1.3.0
 gunicorn==21.2.0
 docker==6.1.3
 kubernetes==28.1.0
-
-# Optional: GPU support (uncomment if using GPU)
-# torch-audio==2.1.0
-# torch-vision==0.16.0
-# accelerate==0.24.1
-
-# Optional: Additional NLP models
-# https://github.com/explosion/spacy-models/releases/download/en_core_sci_lg-0.5.4/en_core_sci_lg-0.5.4-py3-none-any.whl
-# https://github.com/explosion/spacy-models/releases/download/en_core_web_lg-3.7.1/en_core_web_lg-3.7.1-py3-none-any.whl

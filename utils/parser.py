@@ -11,7 +11,7 @@ from dataclasses import dataclass
 from enum import Enum
 
 import pypdf
-import python_docx2txt
+import docx2txt
 import mammoth
 import textract
 from bs4 import BeautifulSoup

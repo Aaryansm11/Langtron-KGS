@@ -18,11 +18,11 @@ from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
 from pydantic import BaseModel, Field
 
 # Internal imports
-from src.document_parser import DocumentParser
-from src.ner_model import NERModel
-from src.relation_extractor import RelationExtractor
-from src.kg_builder import KnowledgeGraphBuilder
-from src.config import Config
+from utils.parser import DocumentParser
+from app.ner_model import NERPipeline
+from app.relation_extractor import RelationExtractor
+from app.kg_builder import KnowledgeGraphBuilder
+from utils.config import Config
 
 # Configure logging
 logging.basicConfig(
